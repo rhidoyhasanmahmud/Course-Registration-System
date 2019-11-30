@@ -34,6 +34,6 @@ class RegistrationFormController extends Controller
         $data->course = $request->course;
         $data->email = $request->email;
         $data->save();
-        return back();
+        return back()->with('message', 'New Registration Member Added. Check out Student List');;
     }
 }

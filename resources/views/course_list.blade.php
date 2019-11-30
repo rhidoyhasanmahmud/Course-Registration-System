@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Students List</title>
+	<title>Course List</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="icon" type="image/png" href="table/images/icons/favicon.ico"/>
@@ -15,14 +15,15 @@
 </head>
 <body>
 	<div class="limiter">
+
 		<div class="container-table100">
 			<div class="wrap-table100">
                 <a href="{{url('course-registration-form')}}" style="background-color: #212529; border: none;color: white;padding: 15px 32px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;">
                     Course Registration Form</a>
                 <a href="{{url('course-add-form')}}" style="background-color: #212529; border: none;color: white;padding: 15px 32px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;">
-                    New Course Add</a>
-                <a href="{{url('/course-list')}}" style="background-color: #212529; border: none;color: white;padding: 15px 32px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;">
-                    Courses List</a>
+                    New Course Add </a>
+                <a href="{{url('/')}}" style="background-color: #212529; border: none;color: white;padding: 15px 32px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;">
+                     Students List</a>
 				<div class="table100">
 
                     <br>
@@ -31,27 +32,13 @@
 							<tr class="table100-head">
 								<th style=" font-weight: bold; text-align: center;">ID</th>
 								<th style=" font-weight: bold; text-align: center;">Name</th>
-								<th style=" font-weight: bold; text-align: center;">Institute Name</th>
-								<th style=" font-weight: bold; text-align: center;">Department Name</th>
-								<th style=" font-weight: bold; text-align: center;">Address</th>
-								<th style=" font-weight: bold; text-align: center;">Gender</th>
-								<th style=" font-weight: bold; text-align: center;">Mobile Number</th>
-								<th style=" font-weight: bold; text-align: center;">Course Name</th>
-								<th style=" font-weight: bold; text-align: center;">Email ID</th>
 							</tr>
 						</thead>
 						<tbody>
-                        @foreach ($allStudents as $student)
+                        @foreach ($allCourses as $course)
 								<tr>
-									<td style="color: black; font-weight: bold; text-align: center;">{{$student->id}}</td>
-									<td style="color: black; font-weight: bold; text-align: center;">{{$student->name}}</td>
-									<td style="color: black; font-weight: bold; text-align: center;">{{$student->institute}}</td>
-									<td style="color: black; font-weight: bold; text-align: center;">{{$student->department}}</td>
-									<td style="color: black; font-weight: bold; text-align: center;">{{$student->address}}</td>
-									<td style="color: black; font-weight: bold; text-align: center;">{{$student->gender}}</td>
-									<td style="color: black; font-weight: bold; text-align: center;">{{$student->mobile_number}}</td>
-									<td style="color: black; font-weight: bold; text-align: center;">{{$student->course}}</td>
-									<td style="color: black; font-weight: bold; text-align: center;">{{$student->email}}</td>
+									<td style="color: black; font-weight: bold; text-align: center;">{{$course->id}}</td>
+									<td style="color: black;text-align: center; font-weight: bold">{{$course->course_name}}</td>
 								</tr>
                         @endforeach
 						</tbody>
